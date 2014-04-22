@@ -56,5 +56,11 @@ namespace Simple.Data.Oracle
             var idx2 = sql.IndexOf(",", idx1);
             return sql.Substring(idx1, idx2 - 7).Trim();
         }
+
+
+        public IEnumerable<string> ApplyPaging(string sql, string[] keys, int skip, int take)
+        {
+           return ApplyPaging(sql, skip, take);
+        }
     }
 }

@@ -161,5 +161,10 @@ namespace Simple.Data.Oracle
 
             public bool ToBeInserted { get; private set; }
         }
+
+        public IDictionary<string, object> Insert(AdoAdapter adapter, string tableName, IDictionary<string, object> data, IDbTransaction transaction = null, bool resultRequired = false)
+        {
+            return Insert(adapter, tableName, data, transaction);
+        }
     }
 }
